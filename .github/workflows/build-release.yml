@@ -52,7 +52,7 @@ jobs:
           if-no-files-found: ignore
 
   build-windows:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -62,17 +62,17 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Build Windows EXE
+        shell: pwsh
         run: |
           cd windows
           dotnet restore
-          dotnet publish -c Release -r win-x64 \
-            --self-contained true \
-            -p:PublishSingleFile=true \
-            -p:IncludeNativeLibrariesForSelfExtract=true \
-            -p:EnableCompressionInSingleFile=true \
-            -p:EnableWindowsTargeting=true
-          mkdir -p dist
-          find bin -name "TypeFlow.exe" -exec cp {} dist/TypeFlow-1.0.0-Setup.exe \;
+          dotnet publish -c Release -r win-x64 `
+            --self-contained true `
+            -p:PublishSingleFile=true `
+            -p:IncludeNativeLibrariesForSelfExtract=true `
+            -p:EnableCompressionInSingleFile=true
+          New-Item -ItemType Directory -Force -Path dist
+          Get-ChildItem -Recurse -Filter "TypeFlow.exe" | Copy-Item -Destination dist/TypeFlow-1.0.0-Setup.exe
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
@@ -162,7 +162,7 @@ jobs:
   release:
     needs: [build-macos, build-windows, build-linux]
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/')
+    if: always() && startsWith(github.ref, 'refs/tags/')
     permissions:
       contents: write
     steps:
