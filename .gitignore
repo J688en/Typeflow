@@ -1,0 +1,32 @@
+# Build outputs
+macos/build/
+windows/bin/
+windows/obj/
+windows/dist/
+linux/AppDir/
+linux/*.AppImage
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+
+# .NET
+*.user
+*.suo
+*.nupkg
+
+# macOS
+.DS_Store
+*.xcuserstate
+
+# IDE
+.vs/
+.vscode/
+.idea/
+
+# Large binaries in website (use GitHub Releases instead)
+website/downloads/*.exe
+website/downloads/*.dmg
+website/downloads/*.AppImage

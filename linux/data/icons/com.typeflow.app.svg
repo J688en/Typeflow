@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background rounded rectangle -->
+  <rect width="128" height="128" rx="24" fill="#3584e4"/>
+
+  <!-- Keyboard base plate -->
+  <rect x="16" y="50" width="96" height="52" rx="10" fill="#ffffff" fill-opacity="0.18"/>
+
+  <!-- Keyboard keys - row 1 -->
+  <rect x="22" y="56" width="12" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="38" y="56" width="12" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="54" y="56" width="12" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="70" y="56" width="12" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="86" y="56" width="20" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+
+  <!-- Keyboard keys - row 2 -->
+  <rect x="22" y="70" width="16" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="42" y="70" width="12" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="58" y="70" width="12" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="74" y="70" width="12" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="90" y="70" width="14" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+
+  <!-- Spacebar -->
+  <rect x="30" y="84" width="68" height="10" rx="2.5" fill="#ffffff" fill-opacity="0.85"/>
+
+  <!-- Animated cursor / flow indicator (wave shape above keyboard) -->
+  <!-- Flow wave line -->
+  <path d="M 22 42 Q 34 30 46 38 Q 58 46 70 34 Q 82 22 94 30 Q 104 36 106 42"
+        stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" stroke-opacity="0.95"/>
+
+  <!-- Cursor blink dot -->
+  <circle cx="106" cy="42" r="5" fill="#ffffff"/>
+
+  <!-- Small sparkle / flow dots -->
+  <circle cx="24" cy="28" r="3" fill="#ffffff" fill-opacity="0.6"/>
+  <circle cx="36" cy="18" r="2" fill="#ffffff" fill-opacity="0.4"/>
+  <circle cx="48" cy="24" r="2.5" fill="#ffffff" fill-opacity="0.5"/>
+</svg>
